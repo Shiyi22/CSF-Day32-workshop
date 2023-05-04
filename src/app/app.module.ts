@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NewTodoComponent } from './components/new-todo/new-todo.component';
+import { TasklistComponent } from './components/tasklist/tasklist.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewTodoComponent,
+    TasklistComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

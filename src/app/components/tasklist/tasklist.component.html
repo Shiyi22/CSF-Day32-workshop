@@ -1,0 +1,27 @@
+<h2 style="color: orangered;">Task</h2>
+<div *ngIf="tasks.length > 0; else noTask" class="table">
+    <ng-container *ngFor="let task of tasks; let i = index">
+        <table *ngIf="!task.isCompleted" style="border: 1px solid black">
+            <tr>
+                <td style="font-size: larger; font-weight: bold;"> {{ task.description }} </td>
+                <td>
+                    <input type="checkbox" (click)="hideTask(i)">
+                </td>
+                <td>
+                    <button type="button" (click)="editTask(i)">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ task.priority }}</td>
+                <td>{{ task.due }}</td>
+                <td>
+                    <button type="button" (click)="deleteTask(i)">Delete</button>
+                </td>
+            </tr>    
+        </table>
+    </ng-container>
+</div>
+
+<ng-template #noTask>
+    There is nothing on your task list
+</ng-template>
