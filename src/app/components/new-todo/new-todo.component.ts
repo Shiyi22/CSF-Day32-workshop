@@ -14,7 +14,7 @@ export class NewTodoComponent implements OnInit, OnChanges {
   todoArray!: FormArray
 
   @Output() onAdd = new Subject<Task>(); 
-  @Input() taskToEdit!: Task
+  @Input() taskToEdit!: Task // this is what the OnChanges detect 
 
   constructor(private fb: FormBuilder) {}
 
